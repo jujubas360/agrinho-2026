@@ -324,6 +324,14 @@ section {
     opacity: 0;
     transform: scale(0.8) translateY(50px);
   }
+
+   /* Ajuste de Layout específico para os botões dentro do gerador automático do Quiz */
+#quiz-opcoes button {
+  text-align: left;
+  border-radius: 15px;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
+}
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
