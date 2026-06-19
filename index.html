@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Y2K & Frutiger Aero Hub - Agrinho 2026</title>
+  <title>AgroAero Sustentável - Agrinho 2026</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,44 +11,68 @@
 
   <header>
     <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <h1 style="font-family: 'Impact', sans-serif; color: #fff; text-shadow: 2px 2px #0066cc;">AERO.NET</h1>
+      <h1 style="font-family: 'Impact', sans-serif; color: #fff; text-shadow: 2px 2px #0066cc;">AGRO.AERO</h1>
       <nav>
-        <a href="#solucoes">Soluções</a>
-        <a href="#calculadora-secao">Impacto</a>
-        <a href="#quiz-secao">Cyber Quiz</a>
+        <a href="#pilares">Pilares Verdes</a>
+        <a href="#calculadora-secao">Eco-Calculadora</a>
+        <a href="#quiz-secao">Desafio Agro</a>
       </nav>
-      <button id="btn-entrar">Entrar</button>
+      <button id="btn-entrar">Conectar</button>
     </div>
   </header>
 
   <section class="hero-bg">
     <div class="container" style="position: relative; z-index: 2;">
-      <h2>AGRINHO DIGITAL 2026</h2>
+      <h2>AGRONEGÓCIO SUSTENTÁVEL 2026</h2>
       <p style="color: #fff; font-size: 1.5rem; font-weight: bold; text-shadow: 1px 1px 4px #000; margin-bottom: 2rem;">
-        Explore a fusão digital entre a sustentabilidade e a tecnologia do futuro.
+        Otimizando o plantio e preservando a natureza através da tecnologia e da inovação.
       </p>
-      <button id="btn-baixar">Explorar Hub</button>
+      <button id="btn-baixar">Ver Diretrizes</button>
+    </div>
+  </section>
+
+  <section id="pilares" class="section">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+      
+      <div class="card">
+        <i class="fa-solid fa-droplet"></i>
+        <h3>Manejo de Água</h3>
+        <p>Sistemas de irrigação gota a gota controlados por sensores que evitam o desperdício dos recursos hídricos.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-seedling"></i>
+        <h3>Plantio Direto</h3>
+        <p>Cultivo sobre a palha do ano anterior, protegendo o solo contra erosões e mantendo os nutrientes vivos.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-satellite-dish"></i>
+        <h3>Agro 4.0</h3>
+        <p>Uso de satélites e inteligência artificial para monitorar lavouras e aplicar insumos apenas onde é necessário.</p>
+      </div>
+
     </div>
   </section>
 
   <section id="calculadora-secao" class="section">
     <div class="container" style="max-width: 600px;">
       <div class="border-green-200">
-        <h2 style="text-align: center; font-family: 'Impact', sans-serif; color: #0066cc; margin-bottom: 0.5rem;">CALCULADORA DE IMPACTO</h2>
+        <h2 style="text-align: center; font-family: 'Impact', sans-serif; color: #0066cc; margin-bottom: 0.5rem;">ECO-CALCULADORA DE IMPACTO</h2>
         
         <p style="text-align: center; margin-bottom: 1.5rem; font-size: 0.95rem; font-weight: bold; color: #072a4a;">
-          Descubra o poder da tecnologia no campo! Digite a área (em hectares) ou o número de árvores plantadas para simular o ganho de eficiência ecológica do seu projeto em pontos digitais.
+          Nossa calculadora simula o impacto ambiental positivo das suas escolhas! Digite a área da sua fazenda (em hectares) onde você pretende adotar tecnologias sustentáveis e descubra a estimativa de emissões de CO₂ evitadas.
         </p>
         
         <div style="margin-bottom: 1rem;">
-          <label style="display:block; font-weight:bold; margin-bottom: 0.5rem;">Insira um valor numérico:</label>
-          <input type="number" id="valorImpacto" placeholder="Ex: 150">
+          <label style="display:block; font-weight:bold; margin-bottom: 0.5rem;">Tamanho da Área Sustentável (Hectares):</label>
+          <input type="number" id="valorImpacto" placeholder="Ex: 50">
         </div>
 
-        <button id="btn-calcular" style="width: 100%; margin-bottom: 1rem;">CALCULAR AGORA</button>
+        <button id="btn-calcular" style="width: 100%; margin-bottom: 1rem;">SIMULAR IMPACTO AMBIENTAL</button>
 
         <div id="resultado">
-          > Sistema pronto. Aguardando dados...
+          > Eco-Painel pronto. Aguardando métricas da fazenda...
         </div>
       </div>
     </div>
@@ -57,11 +81,11 @@
   <section id="quiz-secao" class="section">
     <div class="container" style="max-width: 600px;">
       <div class="card">
-        <h2 style="font-family: 'Impact', sans-serif; color: #ff6600; margin-bottom: 1rem;">CYBER QUIZ ECO-TECH</h2>
+        <h2 style="font-family: 'Impact', sans-serif; color: #ff6600; margin-bottom: 1rem;">QUIZ AGRINHO ECO-SABER</h2>
         
         <div id="quiz-container">
           <p id="quiz-pergunta" style="font-weight: bold; font-size: 1.1rem; margin-bottom: 1.5rem;">
-            Carregando pergunta...
+            Carregando pergunta sobre o campo...
           </p>
           <div id="quiz-opcoes" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
             </div>
@@ -76,7 +100,7 @@
   <footer>
     <div class="container">
       <p style="margin-bottom: 1rem;"><i class="fa-solid fa-leaf"></i></p>
-      <p>© 2000-2026 AERO.NET - Agrinho Inovação e Sustentabilidade</p>
+      <p>© 2000-2026 AGRO.AERO - Consciência Verde & Produtividade Digital</p>
     </div>
   </footer>
 
