@@ -281,7 +281,7 @@ textarea:focus {
 }
 
 /* ============================================
-   FOOTER (WEB 2.0 STYLE)
+   FOOTER
 ============================================ */
 footer {
   background: linear-gradient(to bottom, #0044aa 0%, #001144 100%);
@@ -313,27 +313,20 @@ footer .fa-leaf {
 }
 
 /* ============================================
-   ANIMAÇÕES DE ENTRADA
+   ANIMAÇÕES DE ENTRADA E AJUSTES DE QUIZ
 ============================================ */
 section {
   animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
 }
 
 @keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8) translateY(50px);
-  }
+  from { opacity: 0; transform: scale(0.8) translateY(50px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
 
-   /* Ajuste de Layout específico para os botões dentro do gerador automático do Quiz */
 #quiz-opcoes button {
   text-align: left;
   border-radius: 15px;
   padding: 0.8rem 1.2rem;
   font-size: 0.95rem;
-}
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
 }
