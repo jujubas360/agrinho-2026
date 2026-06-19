@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Y2K & Frutiger Aero Hub</title>
+  <title>Y2K & Frutiger Aero Hub - Agrinho 2026</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,58 +14,38 @@
       <h1 style="font-family: 'Impact', sans-serif; color: #fff; text-shadow: 2px 2px #0066cc;">AERO.NET</h1>
       <nav>
         <a href="#solucoes">Soluções</a>
-        <a href="#acao">Impacto</a>
-        <a href="#contato">Contato</a>
+        <a href="#calculadora-secao">Impacto</a>
+        <a href="#quiz-secao">Cyber Quiz</a>
       </nav>
-      <button>Entrar</button>
+      <button id="btn-entrar">Entrar</button>
     </div>
   </header>
 
   <section class="hero-bg">
     <div class="container" style="position: relative; z-index: 2;">
-      <h2>BEM-VINDO AO FUTURO 2000</h2>
+      <h2>AGRINHO DIGITAL 2026</h2>
       <p style="color: #fff; font-size: 1.5rem; font-weight: bold; text-shadow: 1px 1px 4px #000; margin-bottom: 2rem;">
-        Explore a fusão digital entre a estética glossy e o poder da tecnologia.
+        Explore a fusão digital entre a sustentabilidade e a tecnologia do futuro.
       </p>
-      <button onclick="alert('Iniciando Download do Player... Just kidding!')">Baixar Agora</button>
+      <button id="btn-baixar">Explorar Hub</button>
     </div>
   </section>
 
-  <section id="solucoes" class="section">
-    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-      
-      <div class="card">
-        <i class="fa-solid fa-compact-disc"></i>
-        <h3>Mídia Digital</h3>
-        <p>Streaming e interatividade em alta velocidade direto no seu navegador.</p>
-      </div>
-
-      <div class="card">
-        <i class="fa-solid fa-cloud-bolt"></i>
-        <h3>Nuvem Aero</h3>
-        <p>Seus dados guardados em uma interface de vidro ultra-rápida.</p>
-      </div>
-
-      <div class="card">
-        <i class="fa-solid fa-globe"></i>
-        <h3>Web 2.0</h3>
-        <p>A internet viva, colorida e cheia de conexões dinâmicas.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="acao" class="section">
+  <section id="calculadora-secao" class="section">
     <div class="container" style="max-width: 600px;">
       <div class="border-green-200">
-        <h2 style="text-align: center; font-family: 'Impact', sans-serif; color: #0066cc; margin-bottom: 1rem;">CALCULADORA DE IMPACTO</h2>
+        <h2 style="text-align: center; font-family: 'Impact', sans-serif; color: #0066cc; margin-bottom: 0.5rem;">CALCULADORA DE IMPACTO</h2>
+        
+        <p style="text-align: center; margin-bottom: 1.5rem; font-size: 0.95rem; font-weight: bold; color: #072a4a;">
+          Descubra o poder da tecnologia no campo! Digite a área (em hectares) ou o número de árvores plantadas para simular o ganho de eficiência ecológica do seu projeto em pontos digitais.
+        </p>
         
         <div style="margin-bottom: 1rem;">
-          <label style="display:block; font-weight:bold; margin-bottom: 0.5rem;">Digite o valor para calcular:</label>
-          <input type="number" id="valorImpacto" placeholder="Ex: 100">
+          <label style="display:block; font-weight:bold; margin-bottom: 0.5rem;">Insira um valor numérico:</label>
+          <input type="number" id="valorImpacto" placeholder="Ex: 150">
         </div>
 
-        <button style="width: 100%; margin-bottom: 1rem;" onclick="calcularImpacto()">CALCULAR AGORA</button>
+        <button id="btn-calcular" style="width: 100%; margin-bottom: 1rem;">CALCULAR AGORA</button>
 
         <div id="resultado">
           > Sistema pronto. Aguardando dados...
@@ -74,26 +54,32 @@
     </div>
   </section>
 
+  <section id="quiz-secao" class="section">
+    <div class="container" style="max-width: 600px;">
+      <div class="card">
+        <h2 style="font-family: 'Impact', sans-serif; color: #ff6600; margin-bottom: 1rem;">CYBER QUIZ ECO-TECH</h2>
+        
+        <div id="quiz-container">
+          <p id="quiz-pergunta" style="font-weight: bold; font-size: 1.1rem; margin-bottom: 1.5rem;">
+            Carregando pergunta...
+          </p>
+          <div id="quiz-opcoes" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+            </div>
+        </div>
+
+        <div id="quiz-resultado" style="display: none; border: 4px double #39ff14; background: #000; color: #39ff14; font-family: 'Courier New', monospace; padding: 15px; border-radius: 10px; text-shadow: 0 0 5px #39ff14;">
+          </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <p style="margin-bottom: 1rem;"><i class="fa-solid fa-leaf"></i></p>
-      <p>© 2000-2026 AERO.NET - Todos os direitos reservados.</p>
-      <p style="margin-top: 1rem;">
-        <a href="#">Termos de Uso</a> | <a href="#">Voltar ao Topo</a>
-      </p>
+      <p>© 2000-2026 AERO.NET - Agrinho Inovação e Sustentabilidade</p>
     </div>
   </footer>
 
-  <script>
-    function calcularImpacto() {
-      const valor = document.getElementById('valorImpacto').value;
-      const resultadoDiv = document.getElementById('resultado');
-      if(valor) {
-        resultadoDiv.innerHTML = `> PROCESSANDO INTERAÇÃO...<br>> IMPACTO GERADO: ${(valor * 4.2).toFixed(2)} Xp MegaFlops!`;
-      } else {
-        resultadoDiv.innerHTML = `> ERRO: INSIRA UM VALOR VÁLIDO!`;
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
