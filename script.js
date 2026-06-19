@@ -13,60 +13,69 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Event Listener da Calculadora
+    // 2. Event Listener do Botão de Simulação da Eco-Calculadora
     const btnCalcular = document.getElementById('btn-calcular');
     if (btnCalcular) {
-        btnCalcular.addEventListener('click', calcularImpacto);
+        btnCalcular.addEventListener('click', calcularEcoImpacto);
     }
 
-    // 3. Fake Alerts dos Botões Estilo Anos 2000
-    document.getElementById('btn-entrar')?.addEventListener('click', () => alert('Aba de Login em manutenção! Conexão Discada instável.'));
-    document.getElementById('btn-baixar')?.addEventListener('click', () => alert('Direcionando para a central de downloads Frutiger Aero...'));
+    // 3. Efeitos nos botões auxiliares
+    document.getElementById('btn-entrar')?.addEventListener('click', () => alert('Conectando ao banco de dados da fazenda sustentável...'));
+    document.getElementById('btn-baixar')?.addEventListener('click', () => alert('Abrindo guia de boas práticas agroecológicas da edição Agrinho 2026.'));
 
-    // 4. Inicializar o Quiz
-    inicializarQuiz();
+    // 4. Inicializar o Quiz do Agronegócio
+    inicializarAgroQuiz();
 });
 
-/* LÓGICA DA CALCULADORA */
-function calcularImpacto() {
+/* LÓGICA DA ECO-CALCULADORA DO AGRONEGÓCIO */
+function calcularEcoImpacto() {
     const inputValor = document.getElementById('valorImpacto');
     const resultadoDiv = document.getElementById('resultado');
     
     if (!inputValor || !resultadoDiv) return;
 
-    const valor = inputValor.value.trim();
+    const hectares = inputValor.value.trim();
 
-    if (valor !== '' && !isNaN(valor) && parseFloat(valor) > 0) {
-        const resultadoCalculado = (parseFloat(valor) * 8.4).toFixed(2);
-        resultadoDiv.innerHTML = `> CALCULANDO BIO-EFICIÊNCIA...<br>> PROCESSO CONCLUÍDO!<br>> SEU IMPACTO GEROU: ${resultadoCalculado} MegaFlops de Eco-XP! 🌐`;
+    if (hectares !== '' && !isNaN(hectares) && parseFloat(hectares) > 0) {
+        // Simulação matemática fictícia sobre créditos de carbono evitados por hectare sustentável
+        const co2Evitado = (parseFloat(hectares) * 2.5).toFixed(1);
+        const ecoPontos = Math.floor(hectares * 15);
+        
+        resultadoDiv.innerHTML = `
+            > ACESSANDO DADOS DO SATÉLITE...<br>
+            > MAPEAMENTO DE ÁREA CONCLUÍDO!<br><br>
+            > RESULTADOS ESTIMADOS:<br>
+            * Emissões de CO₂ evitadas: ${co2Evitado} toneladas por ano!<br>
+            * Pontuação Eco-XP acumulada: ${ecoPontos} MegaFlops Digitais! 🌿
+        `;
     } else {
-        resultadoDiv.innerHTML = `> ERRO: INSIRA UM NÚMERO MAIOR QUE ZERO!`;
+        resultadoDiv.innerHTML = `> ERRO: INSIRA UMA QUANTIDADE VÁLIDA DE HECTARES (MAIOR QUE ZERO)!`;
     }
 }
 
-/* LÓGICA DO QUIZ INTERATIVO */
-const perguntasQuiz = [
+/* LÓGICA DO QUIZ DO AGRONEGÓCIO SUSTENTÁVEL */
+const perguntasAgro = [
     {
-        pergunta: "Qual tecnologia ajuda a economizar água na irrigação agrícola?",
-        opcoes: ["Sensores de umidade no solo", "Monitores CRT antigos", "CD-ROMs graváveis"],
+        pergunta: "Qual dessas práticas ajuda diretamente a manter o solo protegido contra a erosão?",
+        opcoes: ["Queimar os restos vegetais antigos", "Plantio Direto sobre a palha", "Revolver a terra constantemente"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual o principal benefício do uso de Drones no agronegócio sustentável?",
+        opcoes: ["Substituir completamente o trabalho humano", "Identificar focos de pragas e economizar defensivos", "Acelerar a velocidade de crescimento dos grãos"],
+        correta: 1
+    },
+    {
+        pergunta: "A rotação de culturas serve principalmente para qual finalidade no campo?",
+        opcoes: ["Evitar que os nutrientes do solo se esgotem", "Mudar as cores da plantação para fotos de satélite", "Diminuir o tamanho das propriedades rurais"],
         correta: 0
-    },
-    {
-        pergunta: "Como os drones auxiliam o pequeno produtor sustentável?",
-        opcoes: ["Tocando músicas MP3", "Mapeando pragas com precisão", "Aumentando a velocidade da internet"],
-        correta: 1
-    },
-    {
-        pergunta: "O que caracteriza a estética Frutiger Aero e a tecnologia verde?",
-        opcoes: ["Telas pretas e escuras", "Elementos de vidro, água, plantas e otimismo digital", "Minimalismo cinza e sem cores"],
-        correta: 1
     }
 ];
 
 let perguntaAtual = 0;
 let pontuacao = 0;
 
-function inicializarQuiz() {
+function inicializarAgroQuiz() {
     const txtPergunta = document.getElementById('quiz-pergunta');
     const containerOpcoes = document.getElementById('quiz-opcoes');
     const containerQuiz = document.getElementById('quiz-container');
@@ -74,9 +83,9 @@ function inicializarQuiz() {
 
     if (!txtPergunta || !containerOpcoes) return;
 
-    if (perguntaAtual < perguntasQuiz.length) {
-        const dadosOpcao = perguntasQuiz[perguntaAtual];
-        txtPergunta.innerText = `[PERGUNTA ${perguntaAtual + 1}/${perguntasQuiz.length}]: ${dadosOpcao.pergunta}`;
+    if (perguntaAtual < perguntasAgro.length) {
+        const dadosOpcao = perguntasAgro[perguntaAtual];
+        txtPergunta.innerText = `[PERGUNTA ${perguntaAtual + 1}/${perguntasAgro.length}]: ${dadosOpcao.pergunta}`;
         containerOpcoes.innerHTML = '';
 
         dadosOpcao.opcoes.forEach((opcao, index) => {
@@ -85,23 +94,37 @@ function inicializarQuiz() {
             btnOpcao.style.width = "100%";
             btnOpcao.style.textTransform = "none";
             btnOpcao.style.margin = "2px 0";
-            btnOpcao.addEventListener('click', () => verificarResposta(index));
+            btnOpcao.addEventListener('click', () => verificarAgroResposta(index));
             containerOpcoes.appendChild(btnOpcao);
         });
     } else {
         containerQuiz.style.display = 'none';
         divResultado.style.display = 'block';
-        divResultado.innerHTML = `> QUIZ COMPLETADO!<br>> SUA PONTUAÇÃO: ${pontuacao}/${perguntasQuiz.length} ACERTOS.<br>> NÍVEL: ${pontuacao === perguntasQuiz.length ? 'CYBER-PRODUTOR SUPREMO 🟢' : 'INTERNAUTA APRENDIZ 🔵'}`;
+        
+        let perfilJogador = "";
+        if (pontuacao === perguntasAgro.length) {
+            perfilJogador = "MESTRE EM AGROECOLOGIA DIGITAL! 🟢";
+        } else if (pontuacao >= 1) {
+            perfilJogador = "PRODUTOR CONSCIENTE EM EVOLUÇÃO! 🔵";
+        } else {
+            perfilJogador = "INTERNAUTA INICIANTE DO CAMPO! 🟡";
+        }
+
+        divResultado.innerHTML = `
+            > DESAFIO ECO-SABER FINALIZADO!<br>
+            > SEUS ACERTOS: ${pontuacao}/${perguntasAgro.length}.<br><br>
+            > CLASSIFICAÇÃO: ${perfilJogador}
+        `;
     }
 }
 
-function verificarResposta(indiceSelecionado) {
-    if (indiceSelecionado === perguntasQuiz[perguntaAtual].correta) {
+function verificarAgroResposta(indiceSelecionado) {
+    if (indiceSelecionado === perguntasAgro[perguntaAtual].correta) {
         pontuacao++;
-        alert('🌐 Resposta Correta! +100 XP');
+        alert('🌐 Excelente! Prática altamente sustentável identificada. +100 Eco-XP');
     } else {
-        alert('❌ Resposta Incorreta! Tente se conectar melhor na próxima.');
+        alert('❌ Essa ação pode prejudicar o ecossistema local. Continue estudando os pilares verdes!');
     }
     perguntaAtual++;
-    inicializarQuiz();
+    inicializarAgroQuiz();
 }
